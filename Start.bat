@@ -14,7 +14,7 @@ goto %Idcmd%
 cd CmdTool
 "Clobby.bat"
 :1
-cd Hacking
+cd HackingTool
 "Hlobby.bat"
 
 
