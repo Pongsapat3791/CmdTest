@@ -17,5 +17,5 @@ set /p "Color=Color Id is > "
 color %Color%
 set /p "Back=Back Y/N > "
 if "%Back%"=="N" goto S
-lobby.bat
+Clobby.bat
 

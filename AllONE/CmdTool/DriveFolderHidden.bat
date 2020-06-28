@@ -12,4 +12,4 @@ set /p "Drive=Name is > "
 attrib -s -h -r /s /d
 set /p "Back=Back Y/N > "
 if "%Back%"=="N" goto S
-lobby.bat
+Clobby.bat

@@ -6,7 +6,7 @@ echo ---------------------------------------------------
 echo                     CmdTool
 echo ---------------------------------------------------
 echo             [color]   Color cmd
-echo             [ p+n ]   Next part
+echo  Ex. p1 p2  [ p+n ]   Next part
 echo             [  0  ]   Lobby Start
 echo             [  1  ]   Msconfig
 echo             [  2  ]   Regedit
