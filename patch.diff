@@ -1,0 +1,482 @@
+From 935d86d82595aa4a940e4c226271b930230310dd Mon Sep 17 00:00:00 2001
+From: Pongsapat_Kamklang <fluk303fluk@gmail.com>
+Date: Sun, 28 Jun 2020 00:56:47 +0700
+Subject: [PATCH] New Update V 0.2 add OpenProTool
+
+---
+ {HackingTool => AllONE/CmdTool}/1.bat         |   0
+ {CmdTool => AllONE/CmdTool}/Clobby.bat        |  58 ++++++++--------
+ .../CmdTool}/DriveFolderHidden.bat            |  30 ++++-----
+ {CmdTool => AllONE/CmdTool}/color.bat         |  42 ++++++------
+ .../CmdTool}/gpedit-enabler.bat               |   0
+ AllONE/CmdTool/msconfig.bat                   |   3 +
+ {CmdTool => AllONE/HackingTool}/1.bat         |   6 +-
+ .../HackingTool}/Hlobby.bat                   |   2 +-
+ .../HackingTool}/Internet.bat                 |   0
+ .../HackingTool}/ShowPasswordWifi.bat         |   0
+ {HackingTool => AllONE/HackingTool}/color.bat |   0
+ AllONE/OpenProTool/1.bat                      |   3 +
+ AllONE/OpenProTool/Olobby.bat                 |  62 ++++++++++++++++++
+ AllONE/OpenProTool/Olobby2.bat                |  31 +++++++++
+ AllONE/OpenProTool/color.bat                  |  21 ++++++
+ AllONE/Start.bat                              |  25 +++++++
+ Start.bat                                     |  21 ------
+ Start.exe.lnk                                 | Bin 0 -> 1332 bytes
+ 18 files changed, 214 insertions(+), 90 deletions(-)
+ rename {HackingTool => AllONE/CmdTool}/1.bat (100%)
+ rename {CmdTool => AllONE/CmdTool}/Clobby.bat (84%)
+ rename {CmdTool => AllONE/CmdTool}/DriveFolderHidden.bat (95%)
+ rename {CmdTool => AllONE/CmdTool}/color.bat (97%)
+ rename {CmdTool => AllONE/CmdTool}/gpedit-enabler.bat (100%)
+ create mode 100644 AllONE/CmdTool/msconfig.bat
+ rename {CmdTool => AllONE/HackingTool}/1.bat (50%)
+ rename {HackingTool => AllONE/HackingTool}/Hlobby.bat (92%)
+ rename {HackingTool => AllONE/HackingTool}/Internet.bat (100%)
+ rename {HackingTool => AllONE/HackingTool}/ShowPasswordWifi.bat (100%)
+ rename {HackingTool => AllONE/HackingTool}/color.bat (100%)
+ create mode 100644 AllONE/OpenProTool/1.bat
+ create mode 100644 AllONE/OpenProTool/Olobby.bat
+ create mode 100644 AllONE/OpenProTool/Olobby2.bat
+ create mode 100644 AllONE/OpenProTool/color.bat
+ create mode 100644 AllONE/Start.bat
+ delete mode 100644 Start.bat
+ create mode 100644 Start.exe.lnk
+
+diff --git a/HackingTool/1.bat b/AllONE/CmdTool/1.bat
+similarity index 100%
+rename from HackingTool/1.bat
+rename to AllONE/CmdTool/1.bat
+diff --git a/CmdTool/Clobby.bat b/AllONE/CmdTool/Clobby.bat
+similarity index 84%
+rename from CmdTool/Clobby.bat
+rename to AllONE/CmdTool/Clobby.bat
+index c118af5..da8666d 100644
+--- a/CmdTool/Clobby.bat
++++ b/AllONE/CmdTool/Clobby.bat
+@@ -1,29 +1,29 @@
+-@echo off
+-title Show
+-:Start
+-cls
+-echo -------------------------------------------
+-echo                   CmdTool
+-echo -------------------------------------------
+-echo           [color]   Color cmd
+-echo           [  0  ]   Back
+-echo           [  1  ]   Drive Folder Hidden
+-echo           [  2  ]   Fix Gpedit Enabler
+-echo -------------------------------------------
+-set /p "Idcmd=is > "
+-goto %Idcmd%
+-:0
+-cd ..
+-Start.bat
+-:1
+-DriveFolderHidden.bat
+-:2
+-gpedit-enabler.bat
+-:color 
+-color.bat 
+-
+-
+-
+-
+-
+-
++@echo off
++title Show
++:Start
++cls
++echo -------------------------------------------
++echo                   CmdTool
++echo -------------------------------------------
++echo           [color]   Color cmd
++echo           [  0  ]   Lobby Start
++echo           [  1  ]   Drive Folder Hidden
++echo           [  2  ]   Fix Gpedit Enabler
++echo -------------------------------------------
++set /p "Idcmd=is > "
++goto %Idcmd%
++:color 
++color.bat 
++:0
++cd ..
++Start.bat
++:1
++DriveFolderHidden.bat
++:2
++gpedit-enabler.bat 
++
++
++
++
++
++
+diff --git a/CmdTool/DriveFolderHidden.bat b/AllONE/CmdTool/DriveFolderHidden.bat
+similarity index 95%
+rename from CmdTool/DriveFolderHidden.bat
+rename to AllONE/CmdTool/DriveFolderHidden.bat
+index 27f867a..b914bf7 100644
+--- a/CmdTool/DriveFolderHidden.bat
++++ b/AllONE/CmdTool/DriveFolderHidden.bat
+@@ -1,15 +1,15 @@
+-@echo off
+-title Drive Folder Hidden
+-:S
+-cls
+-echo -------------------------------------------
+-echo    Ex.     "C:\ --> C"
+-echo            "D:\ --> D"
+-echo -------------------------------------------
+-fsutil fsinfo drives
+-set /p "Drive=Name is > "
+-%Drive%:
+-attrib -s -h -r /s /d
+-set /p "Back=Back Y/N > "
+-if "%Back%"=="N" goto S
+-lobby.bat
++@echo off
++title Drive Folder Hidden
++:S
++cls
++echo -------------------------------------------
++echo    Ex.     "C:\ --> C"
++echo            "D:\ --> D"
++echo -------------------------------------------
++fsutil fsinfo drives
++set /p "Drive=Name is > "
++%Drive%:
++attrib -s -h -r /s /d
++set /p "Back=Back Y/N > "
++if "%Back%"=="N" goto S
++lobby.bat
+diff --git a/CmdTool/color.bat b/AllONE/CmdTool/color.bat
+similarity index 97%
+rename from CmdTool/color.bat
+rename to AllONE/CmdTool/color.bat
+index 63beb16..d4fe116 100644
+--- a/CmdTool/color.bat
++++ b/AllONE/CmdTool/color.bat
+@@ -1,21 +1,21 @@
+-@echo off
+-title Change Color
+-:S
+-cls
+-echo ---------------------------------------------------------
+-echo          0 = Black       8 = Gray
+-echo          1 = Blue        9 = Light Blue
+-echo          2 = Green       A = Light Green
+-echo          3 = Aqua        B = Light Aqua
+-echo          4 = Red         C = Light Red
+-echo          5 = Purple      D = Light Purple
+-echo          6 = Yellow      E = Light Yellow
+-echo          7 = White       F = Bright White
+-echo  Example: "FC" produces light red on bright white  
+-echo ----------------------------------------------------------
+-set /p "Color=Color Id is > "
+-color %Color%
+-set /p "Back=Back Y/N > "
+-if "%Back%"=="N" goto S
+-lobby.bat
+-
++@echo off
++title Change Color
++:S
++cls
++echo ---------------------------------------------------------
++echo          0 = Black       8 = Gray
++echo          1 = Blue        9 = Light Blue
++echo          2 = Green       A = Light Green
++echo          3 = Aqua        B = Light Aqua
++echo          4 = Red         C = Light Red
++echo          5 = Purple      D = Light Purple
++echo          6 = Yellow      E = Light Yellow
++echo          7 = White       F = Bright White
++echo  Example: "FC" produces light red on bright white  
++echo ----------------------------------------------------------
++set /p "Color=Color Id is > "
++color %Color%
++set /p "Back=Back Y/N > "
++if "%Back%"=="N" goto S
++lobby.bat
++
+diff --git a/CmdTool/gpedit-enabler.bat b/AllONE/CmdTool/gpedit-enabler.bat
+similarity index 100%
+rename from CmdTool/gpedit-enabler.bat
+rename to AllONE/CmdTool/gpedit-enabler.bat
+diff --git a/AllONE/CmdTool/msconfig.bat b/AllONE/CmdTool/msconfig.bat
+new file mode 100644
+index 0000000..b28b04f
+--- /dev/null
++++ b/AllONE/CmdTool/msconfig.bat
+@@ -0,0 +1,3 @@
++
++
++
+diff --git a/CmdTool/1.bat b/AllONE/HackingTool/1.bat
+similarity index 50%
+rename from CmdTool/1.bat
+rename to AllONE/HackingTool/1.bat
+index 58bece4..b28b04f 100644
+--- a/CmdTool/1.bat
++++ b/AllONE/HackingTool/1.bat
+@@ -1,3 +1,3 @@
+-
+-
+-
++
++
++
+diff --git a/HackingTool/Hlobby.bat b/AllONE/HackingTool/Hlobby.bat
+similarity index 92%
+rename from HackingTool/Hlobby.bat
+rename to AllONE/HackingTool/Hlobby.bat
+index 97a0b29..baa135c 100644
+--- a/HackingTool/Hlobby.bat
++++ b/AllONE/HackingTool/Hlobby.bat
+@@ -6,7 +6,7 @@ echo -------------------------------------------
+ echo                 Hacking
+ echo -------------------------------------------
+ echo         [color]   Color cmd
+-echo         [  0  ]   Back
++echo         [  0  ]   Lobby Start
+ echo         [  1  ]   Show Profiles Wifi
+ echo         [  2  ]   Internet
+ echo -------------------------------------------
+diff --git a/HackingTool/Internet.bat b/AllONE/HackingTool/Internet.bat
+similarity index 100%
+rename from HackingTool/Internet.bat
+rename to AllONE/HackingTool/Internet.bat
+diff --git a/HackingTool/ShowPasswordWifi.bat b/AllONE/HackingTool/ShowPasswordWifi.bat
+similarity index 100%
+rename from HackingTool/ShowPasswordWifi.bat
+rename to AllONE/HackingTool/ShowPasswordWifi.bat
+diff --git a/HackingTool/color.bat b/AllONE/HackingTool/color.bat
+similarity index 100%
+rename from HackingTool/color.bat
+rename to AllONE/HackingTool/color.bat
+diff --git a/AllONE/OpenProTool/1.bat b/AllONE/OpenProTool/1.bat
+new file mode 100644
+index 0000000..b28b04f
+--- /dev/null
++++ b/AllONE/OpenProTool/1.bat
+@@ -0,0 +1,3 @@
++
++
++
+diff --git a/AllONE/OpenProTool/Olobby.bat b/AllONE/OpenProTool/Olobby.bat
+new file mode 100644
+index 0000000..301cea4
+--- /dev/null
++++ b/AllONE/OpenProTool/Olobby.bat
+@@ -0,0 +1,62 @@
++@echo off
++title Show
++:S
++cls
++echo ---------------------------------------------------
++echo                     CmdTool
++echo ---------------------------------------------------
++echo             [color]   Color cmd
++echo             [ p+n ]   Next part
++echo             [  0  ]   Lobby Start
++echo             [  1  ]   Msconfig
++echo             [  2  ]   Regedit
++echo             [  3  ]   Cmd
++echo             [  4  ]   Services
++echo             [  5  ]   Advanced System setting
++echo             [  6  ]   Windows Firewall
++echo             [  7  ]   Task Manager
++echo             [  8  ]   Local Users and Groups
++echo             [  9  ]   Disk Management
++echo ---------------------------------------------------
++set /p "Idcmd=is > "
++goto %Idcmd%
++:color 
++color.bat
++:0
++cd ..
++Start.bat
++:1
++msconfig
++goto S
++:2
++regedit
++goto S
++:3
++cmd
++goto S
++:4
++services.msc
++goto S
++:5
++sysdm.cpl
++goto S
++:6
++firewall.cpl
++goto S
++:7
++taskmgr
++goto S
++:8
++lusrmgr.msc
++goto S
++:9
++diskmgmt.msc
++goto S
++:p2
++Olobby2.bat
++
++
++
++
++
++
+diff --git a/AllONE/OpenProTool/Olobby2.bat b/AllONE/OpenProTool/Olobby2.bat
+new file mode 100644
+index 0000000..f5c2f28
+--- /dev/null
++++ b/AllONE/OpenProTool/Olobby2.bat
+@@ -0,0 +1,31 @@
++@echo off
++title Show
++:S
++cls
++echo ---------------------------------------------------
++echo                     CmdTool
++echo ---------------------------------------------------
++echo             [color]   Color cmd
++echo             [ p+n ]   Next part
++echo             [  0  ]   Lobby Start
++echo             [  1  ]   Add Hardware Wizard
++echo ---------------------------------------------------
++set /p "Idcmd=is > "
++goto %Idcmd%
++:color 
++color.bat
++:0
++cd ..
++Start.bat
++:1
++hdwwiz
++goto S
++:p1
++Olobby.bat
++
++
++
++
++
++
++
+diff --git a/AllONE/OpenProTool/color.bat b/AllONE/OpenProTool/color.bat
+new file mode 100644
+index 0000000..d4fe116
+--- /dev/null
++++ b/AllONE/OpenProTool/color.bat
+@@ -0,0 +1,21 @@
++@echo off
++title Change Color
++:S
++cls
++echo ---------------------------------------------------------
++echo          0 = Black       8 = Gray
++echo          1 = Blue        9 = Light Blue
++echo          2 = Green       A = Light Green
++echo          3 = Aqua        B = Light Aqua
++echo          4 = Red         C = Light Red
++echo          5 = Purple      D = Light Purple
++echo          6 = Yellow      E = Light Yellow
++echo          7 = White       F = Bright White
++echo  Example: "FC" produces light red on bright white  
++echo ----------------------------------------------------------
++set /p "Color=Color Id is > "
++color %Color%
++set /p "Back=Back Y/N > "
++if "%Back%"=="N" goto S
++lobby.bat
++
+diff --git a/AllONE/Start.bat b/AllONE/Start.bat
+new file mode 100644
+index 0000000..70d9d96
+--- /dev/null
++++ b/AllONE/Start.bat
+@@ -0,0 +1,25 @@
++@echo off
++title Show
++:S
++cls
++echo ---------------------------------------------------
++echo                     Start V 0.2               
++echo ---------------------------------------------------
++echo         [  0  ]   Start to Fix Tool
++echo         [  1  ]   Start to Hacking Tool
++echo         [  2  ]   Start to Open Program Tool
++echo ---------------------------------------------------
++set /p "Idcmd=is > "
++goto %Idcmd%
++:0
++cd CmdTool
++"Clobby.bat"
++:1
++cd HackingTool
++"Hlobby.bat"
++:2
++cd OpenProTool
++"Olobby.bat"
++
++
++
+diff --git a/Start.bat b/Start.bat
+deleted file mode 100644
+index c1ac3d9..0000000
+--- a/Start.bat
++++ /dev/null
+@@ -1,21 +0,0 @@
+-@echo off
+-title Show
+-:S
+-cls
+-echo ------------------------------------------
+-echo                Start V 0.1               
+-echo ------------------------------------------
+-echo        [  0  ]   Start to Fix Tool
+-echo        [  1  ]   Start to Hacking Tool
+-echo ------------------------------------------
+-set /p "Idcmd=is > "
+-goto %Idcmd%
+-:0
+-cd CmdTool
+-"Clobby.bat"
+-:1
+-cd HackingTool
+-"Hlobby.bat"
+-
+-
+-
+diff --git a/Start.exe.lnk b/Start.exe.lnk
+new file mode 100644
+index 0000000000000000000000000000000000000000..b1fd7f1d775331f286152010450fa6e438c52e84
+GIT binary patch
+literal 1332
+zcmbVMT}YEr7=C76OzCIp5|hl&Kro`Y8AJ(|Khv#H_ti#)t=Ok7bZsi`BkQ6Yiy$y5
+zK}aYuvAn5^F2pPnFM@8m5DQU9U{{6xm~_)+&$~^xWDxa!JnwnWIq!LY&-v;B7|dzp
+zz)X~*E&?MI%6;b_25L{t8!UmM7sK_5F`w##+&9GZH~5gjj6!wUHLI+Yx0^;6jM#6r
+zKG=m)d%1T*DIxe^i%u5Qm)A{jwCgpYR*yfd19iwiI##FOtH+yU*FwExK2gpQmPB`d
+zzJ&wr&{2aBTH%2oVa|YjG{x;lRCBKhapNAKI&OVI)o#e1ScfJ|5tc-m->rr}?eaMC
+z=p`0;L@n(%p(+@3HP!-0<8~wJwtm?WyQ7&>T62<35vMQTLluJjTxbN3A{SniK?)mD
+zJ9-tkb*)>sG;2ES8_~8f+Ky<npFWC}Y+*?>SFsE?bJx&KZb368sYD)ej@V5|%VaDg
+zgqnz4Vha&Yb1s`W+N&CB-C)lWE%B~b&l^kDn~0BLSQvbAI^Gmv6flu;>ZNLycT@8`
+zo9q>#m=>=_8|!DAPoa~a&Q<Z0SU<?LWW~vn*7K9Og_lAK?TaNja+ae|t3P~6@9a8I
+zX7k$uheG%<(4c*I{k3}P@Xem0Rc#_W@b1FE^OdZj`%q8M!1%ZQ&#Y_)FcP9|n_G2%
+zv%XrY!7a!5ui2cj@Ws6+#iuwfBordKU<yk9sXY65UTBICXV$gi$yG<b>Csx6uW$Iv
+zlVYxCih?*3A=S0m$@LusDupdZqEB5Gx5``uxsF0dh;$LeoV>s@d~qF2rxQJFiozEq
+zH?0M2l<T+`<SP^sBilu&B-Z~TGQUPh;Ew|>B^85nSrhY^aV_S}YFytV3gW4R`2S0j
+w>Jp0OSUTeTS#HSw^mdnX+*xTEtGLovz`Zt6a1u+#@EehVJB90yB{m0s1DhKN-~a#s
+
+literal 0
+HcmV?d00001
+
+-- 
+2.24.1.windows.2
+

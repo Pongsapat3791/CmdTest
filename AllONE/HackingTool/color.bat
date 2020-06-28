@@ -18,5 +18,5 @@ color %Color%
 pause
 set /p "Back=Back Y/N > "
 if "%Back%"=="N" goto S
-lobby.bat
+Hlobby.bat
 

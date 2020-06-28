@@ -3,9 +3,9 @@ title Show
 :S
 cls
 echo ---------------------------------------------------
-echo                     Start V 0.2               
+echo                   Start V 0.2.1              
 echo ---------------------------------------------------
-echo         [  0  ]   Start to Fix Tool
+echo         [  0  ]   Start to Cmd Tool
 echo         [  1  ]   Start to Hacking Tool
 echo         [  2  ]   Start to Open Program Tool
 echo ---------------------------------------------------
