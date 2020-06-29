@@ -3,20 +3,20 @@ title Show
 :S
 cls
 echo ---------------------------------------------------
-echo                     CmdTool
+echo                  OpenProTool
 echo ---------------------------------------------------
-echo             [color]   Color cmd
-echo  Ex. p1 p2  [ p+n ]   Next part
-echo             [  0  ]   Lobby Start
-echo             [  1  ]   Msconfig
-echo             [  2  ]   Regedit
-echo             [  3  ]   Cmd
-echo             [  4  ]   Services
-echo             [  5  ]   Advanced System setting
-echo             [  6  ]   Windows Firewall
-echo             [  7  ]   Task Manager
-echo             [  8  ]   Local Users and Groups
-echo             [  9  ]   Disk Management
+echo              [color]   Color cmd
+echo  Ex. p1 p2   [ p+n ]   Next part
+echo              [  0  ]   Lobby Start
+echo              [  1  ]   Msconfig
+echo              [  2  ]   Regedit
+echo              [  3  ]   Cmd
+echo              [  4  ]   Services
+echo              [  5  ]   Advanced System setting
+echo              [  6  ]   Windows Firewall
+echo              [  7  ]   Task Manager
+echo              [  8  ]   Local Users and Groups
+echo              [  9  ]   Disk Management
 echo ---------------------------------------------------
 set /p "Idcmd=is > "
 goto %Idcmd%
