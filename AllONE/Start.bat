@@ -6,7 +6,7 @@ call :setESC
 :S
 cls
 echo ---------------------------------------------------
-echo                  %ESC%[101;93mStart V 0.4%ESC%[0m
+echo                %ESC%[101;93mStart V 0.4.1%ESC%[0m
 echo ---------------------------------------------------
 echo         [  0  ]   %ESC%[32mStart to Cmd Tool%ESC%[0m
 echo         [  1  ]   %ESC%[31mStart to Hacking Tool%ESC%[0m

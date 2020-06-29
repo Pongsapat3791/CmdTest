@@ -1,0 +1,2 @@
+cd AllONE
+Start.bat
