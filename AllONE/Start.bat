@@ -3,7 +3,7 @@ title Show
 :S
 cls
 echo ---------------------------------------------------
-echo                   Start V 0.2.1              
+echo                 Start V 0.3              
 echo ---------------------------------------------------
 echo         [  0  ]   Start to Cmd Tool
 echo         [  1  ]   Start to Hacking Tool
@@ -15,8 +15,8 @@ goto %Idcmd%
 cd CmdTool
 "Clobby.bat"
 :1
-cd HackingTool
-"Hlobby.bat"
+cd Login
+"Login.bat"
 :2
 cd OpenProTool
 "Olobby.bat"
