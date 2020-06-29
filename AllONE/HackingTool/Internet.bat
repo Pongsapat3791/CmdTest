@@ -16,8 +16,8 @@ Hlobby.bat
 :1
 cls
 echo -------------------------------------------
-echo      Ex.       "ping 0.0.x.x"
-echo                "ping www.Ex.com"
+echo      Ex.       "0.0.x.x"
+echo                "www.Ex.com"
 echo -------------------------------------------
 set /p "P=is > "
 Ping %P%
@@ -26,8 +26,8 @@ goto S
 :2
 cls
 echo -------------------------------------------
-echo      Ex.       "ping 0.0.x.x"
-echo                "ping www.Ex.com"
+echo      Ex.       "0.0.x.x"
+echo                "www.Ex.com"
 echo -------------------------------------------
 set /p "Ns=is > "
 nslookup %Ns%
@@ -40,6 +40,9 @@ pause
 goto S
 :4
 cls
+echo -------------------------------------------
+echo      Ex.       -t      -a
+echo -------------------------------------------
 set /p "Ne=is > "
 netstat %Ne%
 pause

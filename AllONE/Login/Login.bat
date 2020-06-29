@@ -16,7 +16,7 @@ IF "%unamel%"=="" goto LOGINERROR
 IF "%passwordl"=="" goto LOGINERROR
 IF NOT %unamel%==%uname% goto LOGINERROR
 IF NOT %passwordl%==%pass% goto LOGINERROR
-goto LOADING
+goto DONE
 
 :LOGINERROR
 echo -------------------------------------------------
@@ -25,31 +25,6 @@ echo -------------------------------------------------
 echo Invalid Username or password
 pause
 goto LOGIN
-
-
-:LOADING
-cls
-title Loading...
-set load=%load%!!
-echo -------------------------------------------------
-echo                       Login
-echo -------------------------------------------------
-echo.
-echo.
-echo                 Username : %unamel%
-echo                 Password : *****
-echo.
-echo.
-echo          Logging in...
-echo          ===================================
-echo          %load%
-echo          ===================================
-echo.                              Please Wait...
-echo.
-ping -n 1 localhost >nul
-set/a loadnum=%loadnum% +1
-if %loadnum%==16 goto DONE
-goto LOADING
 
 :DONE
 title Done

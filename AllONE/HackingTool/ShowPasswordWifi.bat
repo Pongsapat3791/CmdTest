@@ -7,7 +7,7 @@ echo ----------------------------------
 echo           Show Password 
 echo ----------------------------------
 set /p "NAME=User Name is >"
-netsh wlan show profiles %NAME% key=clear
+netsh wlan show profiles "%NAME%" key=clear
 set /p "Back=Back Y/N > "
 if "%Back%"=="N" goto S
 Hlobby.bat
