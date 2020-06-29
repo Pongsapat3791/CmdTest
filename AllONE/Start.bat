@@ -3,7 +3,7 @@ title Show
 :S
 cls
 echo ---------------------------------------------------
-echo                 Start V 0.3              
+echo                Start V 0.3.2            
 echo ---------------------------------------------------
 echo         [  0  ]   Start to Cmd Tool
 echo         [  1  ]   Start to Hacking Tool
