@@ -1,12 +1,14 @@
 @echo off
 title Show
+setlocal
+call :setESC
+
 :S
 cls
 echo -------------------------------------------
-echo                 Hacking
+echo                 %ESC%[101;93mHacking%ESC%[0m
 echo -------------------------------------------
-echo         [color]   Color cmd
-echo         [  0  ]   Lobby Start
+echo         [  0  ]   %ESC%[32mLobby Start%ESC%[0m
 echo         [  1  ]   Show Profiles Wifi
 echo         [  2  ]   Internet
 echo -------------------------------------------
@@ -25,3 +27,11 @@ color.bat
 
 
 
+
+
+
+:setESC
+for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
+  set ESC=%%b
+  exit /B 0
+)

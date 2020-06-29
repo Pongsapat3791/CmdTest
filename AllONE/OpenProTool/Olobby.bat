@@ -1,13 +1,15 @@
 @echo off
 title Show
+setlocal
+call :setESC
+
 :S
 cls
 echo ---------------------------------------------------
-echo                  OpenProTool
+echo                  %ESC%[101;93mOpenProTool%ESC%[0m
 echo ---------------------------------------------------
-echo              [color]   Color cmd
-echo  Ex. p1 p2   [ p+n ]   Next part
-echo              [  0  ]   Lobby Start
+echo  %ESC%[93mEx. p1 p2%ESC%[0m   [ p+n ]   %ESC%[96mNext part%ESC%[0m
+echo              [  0  ]   %ESC%[32mLobby Start%ESC%[0m
 echo              [  1  ]   Msconfig
 echo              [  2  ]   Regedit
 echo              [  3  ]   Cmd
@@ -20,8 +22,6 @@ echo              [  9  ]   Disk Management
 echo ---------------------------------------------------
 set /p "Idcmd=is > "
 goto %Idcmd%
-:color 
-color.bat
 :0
 cd ..
 Start.bat
@@ -56,6 +56,13 @@ goto S
 Olobby2.bat
 
 
+
+
+:setESC
+for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
+  set ESC=%%b
+  exit /B 0
+)
 
 
 
