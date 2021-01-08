@@ -20,7 +20,7 @@ Start.bat
 :1
 DriveFolderHidden.bat
 :2
-gpedit-enabler.bat 
+runas /savecred /profile /user:Administrator gpedit-enabler.bat 
 
 
 
