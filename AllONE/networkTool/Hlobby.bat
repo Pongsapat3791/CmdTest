@@ -6,7 +6,7 @@ call :setESC
 :S
 cls
 echo -------------------------------------------
-echo                 %ESC%[101;93mHacking%ESC%[0m
+echo               %ESC%[101;93mNetworkTool%ESC%[0m
 echo -------------------------------------------
 echo         [  0  ]   %ESC%[32mLobby Start%ESC%[0m
 echo         [  1  ]   Show Profiles Wifi
