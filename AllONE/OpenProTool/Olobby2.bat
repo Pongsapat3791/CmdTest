@@ -6,7 +6,7 @@ call :setESC
 :S
 cls
 echo ---------------------------------------------------
-echo                  %ESC%[101;93mOpenProTool%ESC%[0m
+echo                 %ESC%[101;93mOpenProTool 2%ESC%[0m
 echo ---------------------------------------------------
 echo  %ESC%[93mEx. p1 p2%ESC%[0m   [ p+n ]   %ESC%[96mNext part%ESC%[0m
 echo              [  0  ]   %ESC%[32mLobby Start%ESC%[0m
