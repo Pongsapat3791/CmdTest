@@ -20,7 +20,8 @@ Start.bat
 :1
 DriveFolderHidden.bat
 :2
-runas /savecred /profile /user:Administrator gpedit-enabler.bat 
+powershell -command start-process -file gpedit-enabler.bat -verb runas
+goto Start
 
 
 
