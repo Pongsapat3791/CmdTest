@@ -5,6 +5,10 @@ call :setESC
 
 :S
 cls
+echo %JAVA_HOME%
+echo OS = %OS%
+echo Number of Processors = %Number_of_Processors%
+echo Processor Architecture = %Processor_Architecture%
 echo ---------------------------------------------------
 echo               %ESC%[101;93mStart V 0.5.2%ESC%[0m
 echo ---------------------------------------------------
