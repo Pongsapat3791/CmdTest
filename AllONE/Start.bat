@@ -10,7 +10,7 @@ echo OS = %OS%
 echo Number of Processors = %Number_of_Processors%
 echo Processor Architecture = %Processor_Architecture%
 echo ---------------------------------------------------
-echo               %ESC%[101;93mStart V 0.5.2%ESC%[0m
+echo                %ESC%[101;93mStart V 0.6%ESC%[0m
 echo ---------------------------------------------------
 echo         [  0  ]   %ESC%[32mStart to Cmd Tool%ESC%[0m
 echo         [  1  ]   %ESC%[31mStart to Network Tool%ESC%[0m
@@ -19,7 +19,7 @@ echo ---------------------------------------------------
 set /p "Idcmd=is > "
 goto %Idcmd%
 :0
-cd CmdTool
+cd WindownRestoreTool
 "Clobby.bat"
 :1
 cd networkTool

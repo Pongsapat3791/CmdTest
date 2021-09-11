@@ -14,15 +14,6 @@ echo           [  2  ]   Fix Gpedit Enabler
 echo -------------------------------------------
 set /p "Idcmd=is > "
 goto %Idcmd%
-:0
-cd ..
-Start.bat
-:1
-DriveFolderHidden.bat
-:2
-powershell -command start-process -file gpedit-enabler.bat -verb runas
-goto Start
-
 
 
 :setESC
@@ -30,8 +21,3 @@ for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1)
   set ESC=%%b
   exit /B 0
 )
-
-
-
-
-
